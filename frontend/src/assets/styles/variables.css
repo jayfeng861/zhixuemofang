@@ -1,0 +1,180 @@
+/* ============================================================
+   智学魔方 - 专业教育平台设计系统
+   Style: Bento Box Grid + 教育配色（靛蓝+绿色）
+   Reference: 学习网 / 现代SaaS平台
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ── 品牌色 ── */
+  --primary: #4F46E5;
+  --primary-light: #818CF8;
+  --primary-dark: #3730A3;
+  --primary-50: #EEF2FF;
+  --primary-100: #E0E7FF;
+  --primary-200: #C7D2FE;
+  --primary-300: #A5B4FC;
+  --primary-400: #818CF8;
+  --primary-500: #6366F1;
+  --primary-600: #4F46E5;
+  --primary-700: #4338CA;
+  --primary-800: #3730A3;
+  --primary-900: #312E81;
+
+  /* ── CTA / 成功色 ── */
+  --success: #22C55E;
+  --success-light: #4ADE80;
+  --success-dark: #16A34A;
+  --success-50: #F0FDF4;
+  --success-100: #DCFCE7;
+
+  /* ── 警告 / 提示 ── */
+  --warning: #F59E0B;
+  --warning-light: #FBBF24;
+  --warning-dark: #D97706;
+  --warning-50: #FFFBEB;
+  --warning-100: #FEF3C7;
+
+  /* ── 危险 ── */
+  --danger: #EF4444;
+  --danger-light: #F87171;
+  --danger-dark: #DC2626;
+  --danger-50: #FEF2F2;
+  --danger-100: #FEE2E2;
+
+  /* ── 信息 ── */
+  --info: #3B82F6;
+  --info-light: #60A5FA;
+  --info-dark: #2563EB;
+  --info-50: #EFF6FF;
+  --info-100: #DBEAFE;
+
+  /* ── 背景色 ── */
+  --bg: #F5F5F7;
+  --bg-white: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-hover: #F5F3FF;
+  --bg-active: #EDE9FE;
+  --bg-muted: #F8F9FA;
+  --bg-dark: #1E1B4B;
+  --bg-dark-card: #312E81;
+
+  /* ── 文字色 ── */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-light: #94A3B8;
+  --text-white: #FFFFFF;
+  --text-inverse: #FFFFFF;
+  --text-link: var(--primary);
+
+  /* ── 边框 ── */
+  --border: #E2E8F0;
+  --border-light: #F1F5F9;
+  --border-dark: #CBD5E1;
+
+  /* ── 阴影 - Bento Box Style ── */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 8px 24px rgba(15, 23, 42, 0.10);
+  --shadow-xl: 0 12px 32px rgba(15, 23, 42, 0.12);
+  --shadow-2xl: 0 20px 48px rgba(15, 23, 42, 0.16);
+
+  /* 彩色阴影 */
+  --shadow-primary: 0 4px 14px rgba(79, 70, 229, 0.25);
+  --shadow-primary-lg: 0 8px 24px rgba(79, 70, 229, 0.35);
+  --shadow-success: 0 4px 14px rgba(34, 197, 94, 0.25);
+  --shadow-danger: 0 4px 14px rgba(239, 68, 68, 0.25);
+
+  /* ── 圆角 ── */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ── 学科色彩 ── */
+  --chinese-gradient: linear-gradient(135deg, #F97316, #EF4444);
+  --chinese-primary: #F97316;
+  --chinese-secondary: #EF4444;
+  --chinese-light: #FFF7ED;
+  --chinese-shadow: 0 4px 14px rgba(249, 115, 22, 0.25);
+
+  --math-gradient: linear-gradient(135deg, #7C3AED, #4F46E5);
+  --math-primary: #7C3AED;
+  --math-secondary: #4F46E5;
+  --math-light: #F5F3FF;
+  --math-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
+
+  --english-gradient: linear-gradient(135deg, #06B6D4, #22C55E);
+  --english-primary: #06B6D4;
+  --english-secondary: #22C55E;
+  --english-light: #F0FDFA;
+  --english-shadow: 0 4px 14px rgba(6, 182, 212, 0.25);
+
+  /* ── 过渡 ── */
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease-out;
+  --transition-bounce: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── 间距 ── */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* ── 布局 ── */
+  --header-height: 64px;
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 72px;
+  --footer-height: 60px;
+  --content-max-width: 1280px;
+  --content-padding: var(--space-lg);
+
+  /* ── 字体 ── */
+  --font-heading: 'Inter', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', 'Cascadia Code', monospace;
+  --font-display: 'Inter', system-ui, sans-serif;
+
+  /* ── 字号 ── */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-4xl: 36px;
+  --text-5xl: 48px;
+
+  /* ── 字重 ── */
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* ── 行高 ── */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+
+  /* ── 层级 (z-index) ── */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  --z-toast: 800;
+}
