@@ -2,8 +2,10 @@ import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import { getToken, removeToken, getAdminToken, removeAdminToken } from '@/utils/auth'
 
+const baseURL = import.meta.env.VITE_API_BASE_URL || '/api'
+
 const request = axios.create({
-  baseURL: '/api',
+  baseURL,
   timeout: 15000,
   headers: {
     'Content-Type': 'application/json'
