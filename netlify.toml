@@ -14,12 +14,19 @@
   status = 200
   conditions = {Path = ["!/assets/*", "!/api/*", "!/favicon.svg", "!/*.js", "!/*.css", "!/*.png", "!/*.jpg", "!/*.svg", "!/*.ico", "!/*.json", "!/*.woff", "!/*.woff2", "!/*.ttf"]}
 
-# API 代理 - 将 /api/* 请求代理到后端服务器
-[[redirects]]
-  from = "/api/*"
-  to = "https://zhixue-mofang-api.example.com/api/:splat"
-  status = 200
-  force = true
+# API 代理配置说明：
+# 如果你的后端部署在 Render/Railway 等平台，有两种方式配置 API 访问：
+#
+# 方式1（推荐）：在 Netlify 后台设置环境变量
+#   VITE_API_BASE_URL = https://your-backend.onrender.com/api
+#   这样前端会直接请求后端地址，无需配置下面的代理
+#
+# 方式2：取消下面的注释，配置 Netlify 代理
+#   [[redirects]]
+#     from = "/api/*"
+#     to = "https://your-backend.onrender.com/api/:splat"
+#     status = 200
+#     force = true
 
 # 静态资源缓存策略
 [[headers]]

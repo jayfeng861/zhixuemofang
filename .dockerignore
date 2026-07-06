@@ -1,0 +1,32 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+
+# 构建产物
+backend/target/
+*.jar
+*.class
+
+# 文档
+docs/
+*.md
+
+# 部署配置（避免循环引用）
+vercel.json
+netlify.toml
+
+# 其他
+ui-ux-pro-max/
+deploy/
+sql/
+*.log
+*.db

@@ -1,5 +1,6 @@
 server:
-  port: 8080
+  # 云平台通过 PORT 环境变量指定端口，本地默认 8080
+  port: ${PORT:8080}
   forward-headers-strategy: framework
 
 spring:
@@ -11,13 +12,14 @@ spring:
     resources:
       static-locations: classpath:/static/
   datasource:
-    url: jdbc:h2:mem:zhixue_mofang;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    # 优先使用环境变量配置的数据库（云平台），否则使用 H2 内存数据库（本地开发）
+    url: ${DATABASE_URL:jdbc:h2:mem:zhixue_mofang;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE}
+    username: ${DATABASE_USERNAME:sa}
+    password: ${DATABASE_PASSWORD:}
+    driver-class-name: ${DATABASE_DRIVER:org.h2.Driver}
   h2:
     console:
-      enabled: true
+      enabled: ${H2_CONSOLE_ENABLED:true}
       path: /h2-console
   sql:
     init:
@@ -40,7 +42,13 @@ mybatis-plus:
       logic-not-delete-value: 0
 
 jwt:
-  secret: zhixue-mofang-secret-key-for-jwt-token-generation-must-be-long-enough-2024
+  secret: ${JWT_SECRET:zhixue-mofang-secret-key-for-jwt-token-generation-must-be-long-enough-2024}
   expiration: 86400000
   header: Authorization
   prefix: "Bearer "
+
+# 日志配置
+logging:
+  level:
+    com.zhixue: INFO
+    org.springframework: WARN

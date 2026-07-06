@@ -1,0 +1,23 @@
+# Render 配置文件
+# 文档: https://render.com/docs/blueprint-spec
+# 部署方法: 在 Render 后台选择 "New" -> "Blueprint" 并连接此仓库
+
+services:
+  - type: web
+    name: zhixue-mofang-backend
+    env: docker
+    region: singapore  # 新加坡区域，国内访问较快
+    plan: free  # 免费层
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/v1/home/stats
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: H2_CONSOLE_ENABLED
+        value: false
+      - key: JWT_SECRET
+        generateValue: true  # 自动生成 JWT 密钥
+    autoDeploy: true  # 推送代码自动部署
