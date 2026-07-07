@@ -6,8 +6,8 @@ services:
   - type: web
     name: zhixue-mofang-backend
     env: docker
-    region: singapore  # 新加坡区域，国内访问较快
-    plan: free  # 免费层
+    region: singapore
+    plan: free
     dockerfilePath: ./Dockerfile
     dockerContext: .
     healthCheckPath: /api/v1/home/stats
@@ -19,5 +19,6 @@ services:
       - key: H2_CONSOLE_ENABLED
         value: false
       - key: JWT_SECRET
-        generateValue: true  # 自动生成 JWT 密钥
-    autoDeploy: true  # 推送代码自动部署
+        generateValue: true
+    autoDeploy: true
+    buildCommand: ""

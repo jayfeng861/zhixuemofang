@@ -23,6 +23,7 @@ docs/
 # 部署配置（避免循环引用）
 vercel.json
 netlify.toml
+render.yaml
 
 # 其他
 ui-ux-pro-max/
