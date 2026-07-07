@@ -1,5 +1,4 @@
 server:
-  # 云平台通过 PORT 环境变量指定端口，本地默认 8080
   port: ${PORT:8080}
   forward-headers-strategy: framework
 
@@ -12,7 +11,6 @@ spring:
     resources:
       static-locations: classpath:/static/
   datasource:
-    # 优先使用环境变量配置的数据库（云平台），否则使用 H2 内存数据库（本地开发）
     url: ${DATABASE_URL:jdbc:h2:mem:zhixue_mofang;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE}
     username: ${DATABASE_USERNAME:sa}
     password: ${DATABASE_PASSWORD:}
@@ -47,8 +45,10 @@ jwt:
   header: Authorization
   prefix: "Bearer "
 
-# 日志配置
 logging:
   level:
-    com.zhixue: INFO
-    org.springframework: WARN
+    com.zhixue: DEBUG
+    org.springframework: INFO
+    org.mybatis: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
